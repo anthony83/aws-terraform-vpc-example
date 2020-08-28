@@ -15,7 +15,7 @@ resource "aws_instance" "webservers" {
 
 resource "aws_instance" "webservers_private" {
 	#count = "${length(var.subnets_cidr)}"
-  count = 2
+  count = 3
 	ami = "${var.webservers_ami}"
 	instance_type = "${var.instance_type}"
 	security_groups = ["${aws_security_group.webservers.id}"]
