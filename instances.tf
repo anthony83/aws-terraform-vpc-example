@@ -1,6 +1,6 @@
 resource "aws_instance" "webservers" {
 	#count = "${length(var.subnets_cidr)}"
-  count = 1
+  count = 2
 	ami = "${var.webservers_ami}"
 	instance_type = "${var.instance_type}"
 	security_groups = ["${aws_security_group.webservers.id}"]
